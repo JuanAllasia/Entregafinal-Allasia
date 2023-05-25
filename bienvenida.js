@@ -73,7 +73,6 @@ setInterval(() => {
   }).showToast();
 }, 300000);
 
-const BD = [];
 
 const pedirProductos = () => {
   return new Promise((resolve, reject) => {
@@ -86,23 +85,23 @@ const pedirProductos = () => {
     }, 2000);
   });
 };
-
-
 let productos = [];
-
 const renderProductos = (arr) => {
-  
 };
-
-
-
 pedirProductos()
-  .then((data) => {
-    productos = data;
+.then((data) => {
+  productos = data;
 
-    console.log("--> Los productos recuperados de la misproductos son", productos);
-  })
+  console.log("--> Los productos recuperados de la misproductos son", productos);
+})
 
-  .catch((error) => {
-    console.log("No se hallaron resultados disponibles para mostar.");
-  });
+.catch((error) => {
+  console.log("No se hallaron resultados disponibles para mostar.");
+});
+
+fetch("./data/posts.json")
+.then((res) => res.json() )
+.then((data) => {
+  console.log(data);
+
+} )
