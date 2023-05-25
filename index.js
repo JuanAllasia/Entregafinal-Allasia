@@ -16,6 +16,8 @@ form.addEventListener("submit", (event) => {
   sessionStorage.setItem("fecha_nacimiento", fecha_nacimiento);
 });
 
+
+
 function checkEdad() {
   let fechaNacimiento = document.getElementById("fecha_nacimiento").value;
   let fechaActual = new Date();
@@ -35,5 +37,3 @@ function checkEdad() {
     window.location.href = "bienvenida.html";
   }
 }
-
-

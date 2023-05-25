@@ -66,3 +66,43 @@ btn.addEventListener("click", () => {
   });
 });
 
+setInterval(() => {
+  Toastify({
+    text: "gracias por seguir navegando",
+    duration: 5000,
+  }).showToast();
+}, 300000);
+
+const BD = [];
+
+const pedirProductos = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (misproductos.length > 0) {
+        resolve(misproductos);
+      } else {
+        reject([]);
+      }
+    }, 2000);
+  });
+};
+
+
+let productos = [];
+
+const renderProductos = (arr) => {
+  
+};
+
+
+
+pedirProductos()
+  .then((data) => {
+    productos = data;
+
+    console.log("--> Los productos recuperados de la misproductos son", productos);
+  })
+
+  .catch((error) => {
+    console.log("No se hallaron resultados disponibles para mostar.");
+  });
