@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bienvenida</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section class="mainindex">
+    <div>
+      <p>Añade un producto y su precio</p>
+    </div>
+  </section>
+  <div>
+    <form id="formulario-producto">
+      <label for="nombre">Nombre del producto:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      
+      <label for="precio">Precio del producto:</label>
+      <input type="number" id="precio" name="precio" required />
+      
+      <button id="mybtn" type="submit">Agregar producto</button>
+      
+    </form>
+  </div>
+  <ul id="lista-productos">
+  </ul>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./bienvenida.js"></script>
+  
+</body>
+</html>

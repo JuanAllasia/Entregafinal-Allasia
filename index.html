@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codigo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+      <h1>LikeHome</h1>
+    </header>
+    <main>
+      <section class="mainindex">
+        <div>
+          <p>una tienda que tiene todo lo que buscas</p>
+        </div>
+        <form id="formulario">
+          <label for="nombre">Nombre de usuario:</label>
+          <input type="text" id="nombre" name="nombre"><br><br>
+          <label for="contraseña">Contraseña:</label>
+          <input type="password" id="contraseña" name="contraseña"><br><br>
+          <label for="fecha_nacimiento">Introduce tu fecha de nacimiento:</label>
+          <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+          
+        </form>
+        <div id="resultado"></div>
+        <div id="output"></div>
+        
+      </section>
+      <button type="submit"  onclick="checkEdad()">enviar</button>
+    </main>
+    <footer>
+
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
+
