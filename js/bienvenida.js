@@ -25,15 +25,15 @@ formProducto.addEventListener("submit", (event) => {
   const precio = document.getElementById("precio").value;
   const unproducto = new Producto(nombre, precio);
   misproductos.push(unproducto);
-  console.log(
-    "la cantidad de productos que hay en mi lista ",
-    misproductos.length
-  );
+  Toastify({
+    text: "La cantidad de productos que hay en mi lista: " + misproductos.length,
+    duration: 3000,
+  }).showToast();
   localStorage.setItem("almacen", JSON.stringify(misproductos));
-  console.log(
-    "los productos registrados son: ",
-    localStorage.getItem("almacen")
-  );
+  Toastify({
+    text: "Los productos registrados son: " + localStorage.getItem("almacen"),
+    duration: 3000,
+  }).showToast();
   formProducto.reset();
 });
 
@@ -60,7 +60,7 @@ btn.addEventListener("click", () => {
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "El producto a sido guardado,por favor refresca la pagina",
+    title: "El producto ha sido guardado, por favor refresca la página",
     showConfirmButton: false,
     timer: 2500,
   });
@@ -68,11 +68,10 @@ btn.addEventListener("click", () => {
 
 setInterval(() => {
   Toastify({
-    text: "gracias por seguir navegando",
+    text: "Gracias por seguir navegando",
     duration: 5000,
   }).showToast();
 }, 300000);
-
 
 const pedirProductos = () => {
   return new Promise((resolve, reject) => {
@@ -85,23 +84,35 @@ const pedirProductos = () => {
     }, 2000);
   });
 };
+
 let productos = [];
+
 const renderProductos = (arr) => {
+  
 };
-pedirProductos()
-.then((data) => {
-  productos = data;
 
-  console.log("--> Los productos recuperados de la misproductos son", productos);
-})
 
-.catch((error) => {
-  console.log("No se hallaron resultados disponibles para mostar.");
-});
+
 
 fetch("./data/posts.json")
-.then((res) => res.json() )
-.then((data) => {
-  console.log(data);
+  .then(response => response.json())
+  .then(data => {
+    
 
-} )
+    
+    const ul = document.createElement('ul');
+
+    
+    data.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item; 
+      ul.appendChild(li); 
+    });
+
+
+    const listaDatos = document.getElementById('lista-datos');
+    listaDatos.appendChild(ul);
+  })
+  .catch(error => {
+    console.log('Error:', error);
+  });
