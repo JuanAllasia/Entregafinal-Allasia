@@ -1,9 +1,19 @@
 [
-    {"salame": "producto 1", "precio": 1500, "id": 1},
-    {"nombre": "producto 2", "precio": 1500, "id": 2},
-    {"nombre": "producto 3", "precio": 1500, "id": 3},
-    {"nombre": "producto 4", "precio": 1500, "id": 4},
-    {"nombre": "producto 5", "precio": 1500, "id": 5},
-    {"nombre": "producto 6", "precio": 1500, "id": 6},
-    {"nombre": "producto 7", "precio": 1500, "id": 7}
+{
+    "id": 1,
+    "nombre": "salame",
+    "precio": "$2000"
+    },
+    
+{
+        "id": 2,
+        "nombre": "bondiola",
+        "precio": "$5000"
+        },
+{
+        "id": 3,
+        "nombre": "mayonesa",
+        "precio": "$4000"
+        }
+
 ]

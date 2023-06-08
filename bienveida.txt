@@ -65,13 +65,6 @@ if (localStorage.getItem("almacen")) {
 
 const btn = document.querySelector("#mybtn");
 btn.addEventListener("click", () => {
-  const nombre = document.getElementById('nombre').value;
-  const precio = document.getElementById('precio').value;
-
-  if (nombre === '' || precio === '') {
-    return;
-  }
-
   Swal.fire({
     position: "top-end",
     icon: "success",
@@ -80,7 +73,6 @@ btn.addEventListener("click", () => {
     timer: 2500,
   });
 });
-
 
 setInterval(() => {
   Toastify({
